@@ -85,8 +85,13 @@ public class Crud {
         break;
         
     case 4:
-        System.out.println("Opcion 3");  
-
+        System.out.println("Opcion 4  - eliminar un registro");  
+        int idEliminar = scanner.nextInt();
+        EliminarCancion eliminar = new EliminarCancion(lista);
+        eliminar.eliminarCancion(idEliminar);
+        
+        System.out.println("La lista actualizada queda de la siguiente manera");  
+        lista.mostrarCanciones();
         break;
         
     case 5:

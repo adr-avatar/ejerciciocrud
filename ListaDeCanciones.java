@@ -36,6 +36,10 @@ public class ListaDeCanciones {
          return null;
     }
     
+    public boolean eliminarCancionPorId(int id) {
+        return canciones.removeIf(cancion -> cancion.getId() == id);
+    }
+    
     public void mostrarCanciones() {
          for (Cancion cancion : canciones) {
              System.out.println(cancion);
