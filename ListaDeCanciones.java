@@ -12,14 +12,14 @@ import java.util.List;
  * @author adr
  */
 public class ListaDeCanciones {
-    private List <Cancion> canciones;
+    public List<Cancion> canciones;
     
     public ListaDeCanciones() {
         canciones = new ArrayList<>();
     }
     
     public void agregarCancion(int id,String nombre,String artista, int fecha) {
-        Cancion nuevaCancion = Cancion(id, nombre, artista, fecha);
+        Cancion nuevaCancion =  new Cancion(id, nombre, artista, fecha);
         canciones.add(nuevaCancion);
     }
     
