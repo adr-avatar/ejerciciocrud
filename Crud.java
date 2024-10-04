@@ -80,8 +80,26 @@ public class Crud {
    
         break;
     case 3:
-        System.out.println("Opcion 3");  
-
+        System.out.println("Opcion 3 - actualizar. Ingrese el ID de la cancion a modificar");  
+        int idActualizar = scanner.nextInt();
+        scanner.nextLine();
+        
+         System.out.println("Ingrese el Nuevo Nombre de la cancion: ");
+        String nuevoNombre = scanner.nextLine();
+                
+        
+        System.out.println("Ingrese el Nuevo nombre del artista: ");
+        String nuevoArtista = scanner.nextLine();
+        
+        System.out.println("Ingrese el Nuevo año de la cancion: ");
+        int nuevafecha = scanner.nextInt();
+        
+        ActualizarCancion actualizar = new ActualizarCancion(lista);
+        actualizar.actualizarCancion(id, nuevoNombre, nuevoArtista, nuevafecha);
+        
+        System.out.println("La lista actualizada queda de la siguiente manera");  
+        lista.mostrarCanciones();
+        
         break;
         
     case 4:

@@ -40,6 +40,15 @@ public class ListaDeCanciones {
         return canciones.removeIf(cancion -> cancion.getId() == id);
     }
     
+    public boolean actualizarCancionPorId(int id, String nuevoNombre, String nuevoArtista, int nuevaFecha) {
+        Cancion cancion = buscarCancionPorId(id);
+        if (cancion != null) {
+          cancion = new Cancion(id, nuevoNombre, nuevoArtista, nuevaFecha);
+           return true;
+        }
+return false;
+    }
+    
     public void mostrarCanciones() {
          for (Cancion cancion : canciones) {
              System.out.println(cancion);
