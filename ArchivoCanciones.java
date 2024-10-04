@@ -24,7 +24,7 @@ public class ArchivoCanciones {
     public void guardarCanciones(List<Cancion> canciones) {
         try (BufferedWriter writer = new BufferedWriter (new FileWriter(nombreArchivo))) {
             for (Cancion cancion : canciones) {
-                writer.write(cancion.getId() + "," + cancion.getNombre() + "," + cancion.getArtista());
+                writer.write(cancion.getId() + "," + cancion.getNombre() + "," + cancion.getArtista() + "," + cancion.getFecha()                );
                 writer.newLine();
             }
         

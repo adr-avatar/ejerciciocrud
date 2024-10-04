@@ -31,6 +31,7 @@ public class Crud {
         System.out.println("2. Leer un registro");
         System.out.println("3. Actualizar un registro");
         System.out.println("4. Borrar un registro");
+        System.out.println("5. Mostrar todos los registros");
         System.out.println("0. Salir");
          menuOp = scanner.nextInt();
         
@@ -41,6 +42,7 @@ public class Crud {
         scanner.nextLine();
         System.out.println("Ingrese el nombre de la cancion: ");
         String nombre = scanner.nextLine();
+                
         
         System.out.println("Ingrese el nombre del artista: ");
         String artista = scanner.nextLine();
@@ -58,22 +60,54 @@ public class Crud {
         break;
           case 2:
                System.out.println("Opcion 2 Leer un Registro. Ingrese el numero ID");
-   /*            int idregistro = scanner.nextInt();               
-               int idsolicitado = idregistro; */
-/*              System.out.println(idsolicitado + " " +crearCancion.nombre + " " + crearCancion.artista + " " + crearCancion.fecha);       */
+               int idBuscado = scanner.nextInt();
+               Cancion cancionEncontrada = lista.buscarCancionPorId(idBuscado);
+               
+               if (cancionEncontrada != null) {                   
+              System.out.println("Cancion encontrada: " + cancionEncontrada);
+          } else {
+                   System.out.println("No se encuentro la cancion con ID " + idBuscado);
+               }
+   
+   /*LeerArchivoCanciones lector = new LeerArchivoCanciones("canciones.txt");
+   List<Cancion> cancionesLeidas = lector.leerCanciones();
+               
+         System.out.println("Lista de canciones leidas desde el archivo");
+         for (Cancion cancion : cancionesLeidas) {
+          System.out.println(cancion);    
+         } */
+         
+   
         break;
     case 3:
         System.out.println("Opcion 3");  
 
         break;
+        
+    case 4:
+        System.out.println("Opcion 3");  
+
+        break;
+        
+    case 5:
+        System.out.println("Opcion 5 - Mostrar todos los registros ");  
+ LeerArchivoCanciones lector = new LeerArchivoCanciones("canciones.txt");
+   List<Cancion> cancionesLeidas = lector.leerCanciones();
+               
+         System.out.println("Lista de canciones leidas desde el archivo");
+         for (Cancion cancion : cancionesLeidas) {
+          System.out.println(cancion);    
+         }
+        break;    
     default:
         System.out.println("Opcion inválida");
         
         }
         
-        System.out.println("Lista de canciones");
-        lista.mostrarCanciones();
+  //      System.out.println("Lista de canciones");
+  //      lista.mostrarCanciones();
         } while(menuOp != 0);
         
+       
     }
 }

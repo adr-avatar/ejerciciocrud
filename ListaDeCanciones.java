@@ -27,6 +27,15 @@ public class ListaDeCanciones {
         return canciones;
     }
     
+    public Cancion buscarCancionPorId(int id) {
+         for (Cancion cancion : canciones) {
+             if (cancion.getId() == id) {
+                 return cancion;
+             }
+         }
+         return null;
+    }
+    
     public void mostrarCanciones() {
          for (Cancion cancion : canciones) {
              System.out.println(cancion);
