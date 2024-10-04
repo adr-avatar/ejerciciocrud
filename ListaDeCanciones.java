@@ -23,6 +23,10 @@ public class ListaDeCanciones {
         canciones.add(nuevaCancion);
     }
     
+    public List<Cancion> obtenerCanciones() {
+        return canciones;
+    }
+    
     public void mostrarCanciones() {
          for (Cancion cancion : canciones) {
              System.out.println(cancion);

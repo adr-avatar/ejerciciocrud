@@ -19,6 +19,7 @@ public class Crud {
         
         Scanner scanner = new Scanner(System.in);
         ListaDeCanciones lista = new ListaDeCanciones();
+        ArchivoCanciones archivo = new ArchivoCanciones("canciones.txt");
         int id, menu, menuOp;
         id = 0;
         
@@ -50,6 +51,8 @@ public class Crud {
         
        /* Cancion crearCancion = new Cancion(id, capturarCancion, capturarArtista,capturarFecha);*/
         lista.agregarCancion(id,nombre,artista,fecha);        
+        
+        archivo.guardarCanciones(lista.obtenerCanciones());
        /* System.out.println(crearCancion.id + " " +crearCancion.nombre + " " + crearCancion.artista + " " + crearCancion.fecha); */
         id++;
         break;
