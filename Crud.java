@@ -36,6 +36,8 @@ public class Crud {
         switch (menuOp) {
           case 1: 
         /*idc = idc + 1; */
+        
+        scanner.nextLine();
         System.out.println("Ingrese el nombre de la cancion: ");
         String nombre = scanner.nextLine();
         
@@ -53,8 +55,8 @@ public class Crud {
         break;
           case 2:
                System.out.println("Opcion 2 Leer un Registro. Ingrese el numero ID");
-               int idregistro = scanner.nextInt();               
-               int idsolicitado = idregistro;
+   /*            int idregistro = scanner.nextInt();               
+               int idsolicitado = idregistro; */
 /*              System.out.println(idsolicitado + " " +crearCancion.nombre + " " + crearCancion.artista + " " + crearCancion.fecha);       */
         break;
     case 3:
