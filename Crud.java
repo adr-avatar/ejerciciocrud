@@ -92,13 +92,17 @@ public class Crud {
         String nuevoArtista = scanner.nextLine();
         
         System.out.println("Ingrese el Nuevo año de la cancion: ");
-        int nuevafecha = scanner.nextInt();
+        int nuevaFecha = scanner.nextInt();
         
-        ActualizarCancion actualizar = new ActualizarCancion(lista);
-        actualizar.actualizarCancion(id, nuevoNombre, nuevoArtista, nuevafecha);
+        ActualizarCancion actualizador = new ActualizarCancion(lista);
+        actualizador.actualizarCancion(idActualizar, nuevoNombre, nuevoArtista, nuevaFecha);
+        
+        
+        archivo.guardarCanciones(lista.obtenerCanciones());
         
         System.out.println("La lista actualizada queda de la siguiente manera");  
         lista.mostrarCanciones();
+        
         
         break;
         
@@ -108,8 +112,11 @@ public class Crud {
         EliminarCancion eliminar = new EliminarCancion(lista);
         eliminar.eliminarCancion(idEliminar);
         
+        archivo.guardarCanciones(lista.obtenerCanciones());
+        
         System.out.println("La lista actualizada queda de la siguiente manera");  
         lista.mostrarCanciones();
+        
         break;
         
     case 5:

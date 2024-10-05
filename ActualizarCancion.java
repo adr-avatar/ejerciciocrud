@@ -9,7 +9,7 @@ package com.mycompany.crud;
  * @author adr
  */
 public class ActualizarCancion {
-    public ListaDeCanciones lista;
+    private ListaDeCanciones lista;
     
     public ActualizarCancion(ListaDeCanciones lista){
         this.lista = lista;

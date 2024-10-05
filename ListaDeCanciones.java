@@ -43,7 +43,10 @@ public class ListaDeCanciones {
     public boolean actualizarCancionPorId(int id, String nuevoNombre, String nuevoArtista, int nuevaFecha) {
         Cancion cancion = buscarCancionPorId(id);
         if (cancion != null) {
-          cancion = new Cancion(id, nuevoNombre, nuevoArtista, nuevaFecha);
+            canciones.remove(cancion);
+            canciones.add(new Cancion(id,nuevoNombre,nuevoArtista, nuevaFecha));
+            
+          /*cancion = new Cancion(id, nuevoNombre, nuevoArtista, nuevaFecha);*/
            return true;
         }
 return false;
